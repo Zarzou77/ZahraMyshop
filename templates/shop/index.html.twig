@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des produits
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="text-center my-3">Liste de nos Tee-Shirt</h1>
+
+	<div class="row">
+
+		{% for produit in produits %} 
+		<body style="background-color:#D7CCC8">
+			
+		
+			<div class="col-md-4">
+				<div class="card mb-3" style="width: 18rem;">
+                <div class="text-center" >
+					<h3 class="card-header">{{ produit.titre }}</h3>
+					<br><br>
+					<img src="{{ produit.photo }}" width="150px" height="150px" alt="Image du produit">
+					
+                </div>
+					<div class="card-body">
+						<p class="card-text text-start fw-bold">{{ produit.description }}</p>
+                        <p class="card-text text-start fw-bold">{{ produit.couleur }}</p>
+                        <p class="card-text text-start fw-bold">{{ produit.collection }}</p>
+                        <p class="card-text text-start fw-bold">{{ produit.taille }}</p>
+                        <p class="card-text text-end fw-bold">{{ produit.prix }}€</p>
+                        <p class="card-text text-start fw-bold">{{ produit.stock }}</p>
+					</div>
+					<div class="card-body text-end">
+                    <a href=" #" class="card-link btn btn-success"> Ajouter au panier </a>
+                    </div>          
+				</div>
+			</div>
+
+		{% endfor %}
+
+	</div>
+</body>
+{% endblock %}
+

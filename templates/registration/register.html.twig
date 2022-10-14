@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compte{% endblock %}
+
+{% block body %}
+<body  style="background-color:#D7CCC8">   
+
+    <div class="text-center">
+    <h1>Inscription</h1>
+    <h6>Il ne vous reste plus qu'à renseigner vos informations</h6>
+    </div>
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.civilite) }}
+        {{ form_row(registrationForm.nom) }}
+        {{ form_row(registrationForm.prenom) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        
+
+        <button type="submit" class="btn btn-lg btn-warning">Créer mon compte</button>
+    {{ form_end(registrationForm) }}
+        
+</body>
+{% endblock %}
